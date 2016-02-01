@@ -1,5 +1,22 @@
 <div class="header_wrapper">
     <div class="logo">
-      <%= link_to "Drop Clone", root_url %>
+      <%= link_to "New project", new_project_path %>
     </div>
+</div>
+<div class="container">
+  <div class="row">
+    <h3>Users</h3>
+    <div class="column">
+      <table class="table">
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= link_to user.name, user %></td>
+              <td><%= link_to user.email, user %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
