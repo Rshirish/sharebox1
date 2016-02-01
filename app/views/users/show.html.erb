@@ -1,0 +1,33 @@
+<h3>User</h3>
+<p><%= gravatar @user %></p>
+
+<p>Name: <%= @user.name if @user.name %></p>
+<p>Email: <%= @user.email if @user.email %></p>
+<p><%= link_to "Find Friends", users_path %></p>
+
+<h2>Your Friends</h2>
+<ul>
+  <% for friendship in @user.friendships %>
+  <li>
+    <%= h friendship.friend.email %>
+    (<%= link_to "remove", friendship, :method => :delete %>)
+  </li>
+  <% end %>  
+</ul>
+
+<h2>Users Who Have Befriended You</h2>
+<ul>
+  <% for user in @user.inverse_friends %>
+  <li><%= h user.email %></li>
+  <% end %>
+</ul>
+
+<div class="header_wrapper">
+    <div class="logo">
+     <p> <%= link_to "New project", new_project_path %></p>
+      <p>
+
+      <%= link_to 'My project', controller: 'projects' %>
+     </p>
+    </div>
+</div>

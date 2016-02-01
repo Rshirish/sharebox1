@@ -14,6 +14,7 @@ gem 'spring',        group: :development
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'protected_attributes'
+gem 'foundation-rails'
 
 
 
@@ -24,7 +25,7 @@ group :development, :test do
   gem 'capybara'
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
-  gem 'foundation-rails'
+  
   gem 'growl'
   gem 'launchy'
   gem 'meta_request'
